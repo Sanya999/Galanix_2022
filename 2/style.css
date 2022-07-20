@@ -1,0 +1,159 @@
+body{
+	
+  background-color: black;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 20px;
+  width: 80%;
+  left: 10%;
+  height: 1000px;
+  /*border: 2px solid blue;*/
+}
+
+.text_data{
+  position: absolute;
+  width: 200px;
+  height:100px;
+  color: white;
+  left: 2%;
+  top: 2%;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 200px;
+  width: 100%;
+  /*border: 2px solid green;*/
+}
+
+.row_900 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 200px;
+  width: 50%;
+  /*border: 2px solid green;*/
+}
+
+.imageBlock{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 40%;
+
+}
+
+.imageFile{
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  border: 5px solid rgb(160 160 160);
+  border-radius: 50%;
+}
+
+.firstImage{
+ border-color: red;
+}
+
+.imageFile:hover{
+  border-color: yellow;
+  cursor: pointer;
+  animation-duration: 1s;
+  animation-name: imageRotate;
+}
+
+@keyframes imageRotate{
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(45deg);
+  }
+}
+
+@media (max-width: 900px){
+  .row{
+    flex-direction: column;
+    align-items: center;
+    height:600px;
+  }
+  .row_900{
+    width: 100%;
+    height: 250px;
+  }
+  .container{
+  }
+}
+
+@media (max-width: 500px){
+  .row{
+    height:1000px;
+  }
+  .row_900{
+    flex-direction: column;
+    align-items: center;
+    height:500px;
+  }
+  .imageBlock{
+    width: 90%;
+    height:200px;
+  }
+  .container{
+    height:3000px;
+  }
+}
+
+#imagePlaceholder {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: none;
+  z-index: 10;
+  flex-direction: row;
+  justify-content: center;
+}
+.imageFilePlaceholder{
+  height: 100%;
+  z-index: 11;
+  max-height: 100%;
+}
+#buttonClose {
+  width: 100px;
+  height: 40px;
+  background-color: darkblue;
+  position: absolute;
+  top: 30px;
+  z-index: 12;
+  color: white;
+  font-size: 700;
+  border-radius: 20%;
+}
+
+#helper { 
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  color: white;
+  left: 2%;
+  top: 5%;
+  border-radius: 30%;
+  background-color: green;
+}
+button {
+  cursor: pointer;
+}
